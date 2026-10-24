@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kshitij Sane | Electronics &amp; Telecommunication Engineer</title>
+<meta name="description" content="Portfolio of Kshitij Sane, B.Tech Electronics and Telecommunication Engineering student.">
+<style>
+:root{--void:#05030f;--navy:#0b1440;--blue:#4f7cff;--pink:#ff4fa3;--violet:#7a3cff;--ink:#e8ecff;--mute:#9aa4d6;--card:rgba(20,24,64,.55);--line:rgba(120,140,255,.28);color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:radial-gradient(120% 90% at 50% 0%,#0d1250 0%,var(--void) 60%);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;overflow-x:hidden;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.neb{position:fixed;border-radius:50%;filter:blur(70px);opacity:.5;z-index:0;animation:drift 22s ease-in-out infinite alternate}
+.n1{width:60vmax;height:60vmax;left:-20vmax;top:-18vmax;background:radial-gradient(circle,#3b55ff,transparent 68%)}
+.n2{width:55vmax;height:55vmax;right:-22vmax;top:15vh;background:radial-gradient(circle,#ff3d9a,transparent 68%);animation-duration:28s;opacity:.38}
+.n3{width:50vmax;height:50vmax;left:10vw;bottom:-28vmax;background:radial-gradient(circle,#7a3cff,transparent 68%);animation-duration:34s}
+@keyframes drift{to{transform:translate(8vmax,6vmax) scale(1.18)}}
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:1}
+main{position:relative;z-index:2;min-height:100%;display:flex;flex-direction:column;justify-content:center;padding:clamp(24px,5vw,64px);max-width:1100px;margin:auto}
+.hello{color:var(--pink);font-size:clamp(15px,2vw,19px)}
+h1{font-size:clamp(42px,10vw,104px);line-height:1;margin:10px 0 14px;font-weight:800;letter-spacing:-.02em;background:linear-gradient(100deg,#fff 10%,#9db4ff 45%,#ff7cc0 90%);-webkit-background-clip:text;background-clip:text;color:transparent;animation:rise 1s both}
+@keyframes rise{from{opacity:0;transform:translateY(24px);filter:blur(8px)}}
+.role{font-size:clamp(16px,2.6vw,26px);color:#8fb0ff;min-height:1.4em}
+.role::after{content:"";display:inline-block;width:2px;height:1em;background:var(--pink);margin-left:4px;vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{max-width:56ch;color:var(--mute);margin:16px 0 34px;line-height:1.6;font-size:clamp(15px,2vw,18px)}
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;max-width:900px}
+.chip{position:relative;overflow:hidden;background:var(--card);backdrop-filter:blur(8px);border:1px solid var(--line);color:var(--ink);padding:16px 16px;border-radius:14px;font:inherit;font-size:16px;text-align:left;cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s}
+.chip::before{content:"";position:absolute;inset:-60%;background:conic-gradient(from 0deg,transparent 0 70%,var(--pink),var(--blue),transparent);opacity:0;animation:spin 3s linear infinite;transition:opacity .3s;z-index:-1}
+.chip::after{content:"";position:absolute;inset:1.5px;border-radius:12.5px;background:#0e1238;z-index:-1}
+.chip{z-index:0;isolation:isolate}
+.chip:hover::before,.chip:focus-visible::before{opacity:1}
+@keyframes spin{to{transform:rotate(360deg)}}
+.chip:hover,.chip:focus-visible{transform:translateY(-4px) scale(1.02);box-shadow:0 10px 30px rgba(122,60,255,.45);outline:none}
+.chip small{display:block;color:var(--mute);font-size:12.5px;margin-top:3px}
+/* panel */
+#panel{position:fixed;inset:0;z-index:5;background:radial-gradient(120% 90% at 50% 0%,#101660 0%,#070419 70%);clip-path:circle(0 at var(--x,50%) var(--y,50%));visibility:hidden;transition:clip-path .7s cubic-bezier(.7,0,.2,1),visibility 0s .7s;overflow-y:auto;-webkit-overflow-scrolling:touch}
+#panel.open{clip-path:circle(150% at var(--x,50%) var(--y,50%));visibility:visible;transition:clip-path .9s cubic-bezier(.65,0,.2,1),visibility 0s}
+svg.frame{position:fixed;inset:10px;pointer-events:none;filter:drop-shadow(0 0 6px var(--pink))}
+svg.frame rect{fill:none;stroke:url(#g);stroke-width:2;stroke-dasharray:var(--len,3000);stroke-dashoffset:var(--len,3000)}
+#panel.open svg.frame rect{animation:draw 1.6s .3s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.inner{max-width:860px;margin:auto;padding:clamp(48px,8vw,90px) clamp(20px,5vw,44px) 90px}
+.inner>*{opacity:0;transform:translateY(22px) scale(.98)}
+#panel.open .inner>*{animation:in .7s calc(.55s + var(--i,0)*.09s) cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes in{to{opacity:1;transform:none}}
+.close{position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:20px;z-index:6;background:linear-gradient(135deg,var(--pink),var(--violet));color:#fff;border:0;border-radius:50%;width:46px;height:46px;font-size:24px;cursor:pointer;box-shadow:0 0 18px rgba(255,79,163,.6)}
+.close:focus-visible{outline:2px solid #fff;outline-offset:3px}
+h2{font-size:clamp(32px,6.5vw,56px);margin-bottom:24px;font-weight:800;letter-spacing:-.01em;background:linear-gradient(100deg,#fff,#9db4ff 60%,#ff7cc0);-webkit-background-clip:text;background-clip:text;color:transparent}
+h3{font-size:19px}
+p{color:#cdd5ff;line-height:1.7}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:16px;backdrop-filter:blur(6px)}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tag{border:1px solid rgba(79,124,255,.5);background:rgba(79,124,255,.12);padding:8px 15px;border-radius:999px;font-size:15px;transition:transform .2s,box-shadow .2s}
+.tag.hw{border-color:rgba(255,79,163,.55);background:rgba(255,79,163,.12)}
+.tag.soft{border-color:var(--line);background:rgba(255,255,255,.05);color:var(--mute)}
+.tag:hover{transform:translateY(-2px);box-shadow:0 0 14px rgba(122,60,255,.6)}
+.sub{color:var(--mute);font-size:14px;margin:0 0 10px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;margin-top:22px}
+.stat{text-align:center}.stat b{display:block;font-size:34px;color:var(--pink)}.stat span{color:var(--mute);font-size:14px}
+.tl{position:relative;padding-left:26px;border-left:2px solid transparent;border-image:linear-gradient(var(--blue),var(--pink)) 1}
+.tl .card{position:relative}
+.tl .card::before{content:"";position:absolute;left:-35px;top:26px;width:14px;height:14px;border-radius:50%;background:var(--pink);box-shadow:0 0 14px var(--pink)}
+.row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.badge{background:linear-gradient(135deg,rgba(255,79,163,.25),rgba(122,60,255,.25));border:1px solid rgba(255,79,163,.5);border-radius:999px;padding:5px 14px;font-size:14px;white-space:nowrap}
+.pulse{animation:pulse 2s infinite}@keyframes pulse{50%{box-shadow:0 0 16px rgba(255,79,163,.8)}}
+.proj{width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer}
+.proj .more{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.proj.on .more{max-height:420px}
+.proj .hint{color:var(--pink);font-size:13px;margin-top:10px}
+.proj:hover,.proj:focus-visible{border-color:var(--pink);outline:none;box-shadow:0 0 22px rgba(122,60,255,.4)}
+.feat{border-color:rgba(255,79,163,.5)}
+.more h4{color:#8fb0ff;font-size:14px;margin:14px 0 4px}
+.grp{margin:26px 0 12px;color:#8fb0ff;font-size:15px}
+a{color:#9db4ff}
+.conn{display:block;text-decoration:none;color:var(--ink);transition:transform .25s,border-color .25s}
+.conn:hover,.conn:focus-visible{transform:translateX(6px);border-color:var(--pink);outline:none}
+.conn small{display:block;color:var(--mute);margin-bottom:3px}
+.conn span{word-break:break-all}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.grid .card{margin:0;transition:transform .3s,border-color .3s,box-shadow .3s}
+.grid .card:hover{transform:translateY(-4px);border-color:var(--pink);box-shadow:0 0 22px rgba(122,60,255,.4)}
+.hob.wide{grid-column:1/-1;border-color:rgba(255,79,163,.5)}
+.ico{font-size:30px;margin-bottom:8px;display:inline-block;animation:float 4s ease-in-out infinite}
+.hob:nth-child(even) .ico{animation-delay:-2s}
+@keyframes float{50%{transform:translateY(-6px) rotate(-6deg)}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-iteration-count:1!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body>
+<div class="neb n1"></div><div class="neb n2"></div><div class="neb n3"></div>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="vig" aria-hidden="true"></div>
+<style>.vig{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,rgba(2,1,10,.15) 0%,rgba(2,1,10,.55) 60%,rgba(0,0,6,.92) 100%);animation:breathe 9s ease-in-out infinite alternate}@keyframes breathe{to{opacity:.75}}</style>
+<main>
+  <p class="hello">Hello, I’m</p>
+  <h1>Kshitij Sane</h1>
+  <div class="role" id="role"></div>
+  <p class="lead">B.Tech student in Electronics and Telecommunication Engineering, building embedded, IoT and software projects that solve real-world problems.</p>
+  <nav class="chips" id="chips" aria-label="Portfolio sections"></nav>
+</main>
+<div id="panel" role="dialog" aria-modal="true" aria-label="Section details">
+  <svg class="frame" id="fs" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4f7cff"/><stop offset="1" stop-color="#ff4fa3"/></linearGradient></defs><rect id="frame" x="0" y="0" rx="14"/></svg>
+  <button class="close" id="close" aria-label="Close section">&times;</button>
+  <div class="inner" id="inner"></div>
+</div>
+<script>
+const ROLES=["Electronics & Telecommunication Engineer","Embedded Systems & IoT Builder","Software Development Enthusiast"];
+const tag=(t,c="")=>`<span class="tag ${c}">${t}</span>`;
+const S=[
+{id:"about",label:"About Me",sub:"Who I am",html:()=>`
+ <p style="--i:1;font-size:19px">Hello! I’m Kshitij Sane, a B.Tech student in Electronics and Telecommunication Engineering at Dr. Babasaheb Ambedkar Technological University (DBATU).</p>
+ <div class="card" style="--i:2;margin-top:22px"><h3>What I’m into</h3><p>Software development, embedded systems, the Internet of Things (IoT) and emerging technologies. I enjoy exploring new tools, improving my technical skills, and building practical projects that address real-world problems.</p></div>
+ <div class="card" style="--i:3"><h3>Where I’m headed</h3><p>To build a strong technical foundation and gain hands-on industry experience.</p></div>
+ <div class="tags" style="--i:4">${tag("Software Development")}${tag("Embedded Systems","hw")}${tag("IoT","hw")}${tag("Emerging Tech")}</div>
+ <div class="stats" style="--i:5"><div class="card stat"><b>5</b><span>Projects</span></div><div class="card stat"><b>2</b><span>Experiences</span></div><div class="card stat"><b>5</b><span>Certificates</span></div></div>`},
+{id:"skills",label:"Skills",sub:"What I work with",html:()=>{const g=[["Programming Languages",["C","C++","Python"],""],["Web Development",["HTML","CSS","JavaScript"],""],["Embedded Systems & IoT",["Arduino","ESP32","Blynk"],"hw"],["Tools",["Git & GitHub","Visual Studio Code","MATLAB"],""]];
+ return g.map((x,i)=>`<div class="card" style="--i:${i+1}"><p class="sub">${x[0]}</p><div class="tags">${x[1].map(t=>tag(t,x[2])).join("")}</div></div>`).join("")+`<div class="card" style="--i:5"><p class="sub">Professional Skills</p><div class="tags">${["Problem-solving","Teamwork","Communication","Willingness to learn"].map(t=>tag(t,"soft")).join("")}</div></div>`}},
+{id:"education",label:"Education",sub:"College and school",html:()=>{const e=[["Bachelor of Technology (B.Tech)","Electronics and Telecommunication Engineering","Dr. Babasaheb Ambedkar Technological University (DBATU)","2023–2027 (Expected Graduation)","CGPA 7.03 (7th sem)",1],["Higher Secondary (Class XII)","CBSE","Kendriya Vidyalaya, Aurangabad Cantt","Completed 2022","63.2%"],["Secondary (Class X)","CBSE","Kendriya Vidyalaya, Aurangabad Cantt","Completed 2020","75%"]];
+ return `<div class="tl">`+e.map((x,i)=>`<div class="card" style="--i:${i+1}"><div class="row"><h3>${x[0]}</h3><span class="badge ${x[5]?"pulse":""}">${x[4]}</span></div><p style="margin-top:8px">${x[1]}<br>${x[2]}</p><p class="sub" style="margin:8px 0 0">${x[3]}</p></div>`).join("")+`</div>`}},
+{id:"projects",label:"Projects",sub:"Things I’ve built",html:()=>{const P=[
+["SmartDrive","Driver Behaviour Monitoring & Insurance Risk Assessment System","An engineering project focused on monitoring driving behaviour using camera-based detection and sensors. The proposed system aims to identify driving risks and generate a driver safety score based on observed driving patterns.","To encourage safer driving through real-time monitoring and risk assessment.",["Python","Computer Vision","ESP32","Sensors","Web"],1],
+["Desk Buddy","AI Desktop Assistant","An embedded-systems project focused on developing a compact desktop assistant that provides useful everyday functions through a display and audio interface. The concept aims to combine simple utilities with an interactive user experience.","To develop a compact and interactive desktop companion using embedded technology.",["ESP32-C3","OLED display","Speaker","Embedded programming"]],
+["Garlic Impurity Detection & Sorting","Image Processing-Based System","An engineering project focused on detecting impurities in garlic using camera-based inspection and image processing. The proposed system aims to identify unwanted materials and automate sorting using a conveyor mechanism and servo motor.","To improve garlic quality inspection and reduce manual effort through automated impurity detection and sorting.",["Python","Computer Vision","Anomalib (PatchCore)","ESP32","Servo motor","Blynk"]],
+["Smart Health Monitoring","IoT-Based System","An IoT-based healthcare project designed to monitor patient health parameters using sensors and provide access to health information through a digital interface. The system concept combines ECG and temperature monitoring with fall detection.","To support remote health monitoring and provide timely information about important health parameters.",["Arduino Mega 2560","AD8232 ECG sensor","LM35","Accelerometer","Node.js","Web"]],
+["Water Quality Checking & Alert System","IoT-Based Project","An IoT-based project designed to monitor water-quality parameters using sensors and display readings through a monitoring interface. The system aims to help users identify potential water-quality issues and receive alerts when monitored values require attention.","To simplify water-quality monitoring through sensor-based measurements and alerts.",["ESP32","Water-quality sensors","IoT","Monitoring dashboard"]]];
+ return P.map((p,i)=>`<button class="card proj ${p[5]?"feat":""}" style="--i:${i+1}" aria-expanded="false"><h3>${p[0]}</h3><p class="sub" style="margin:4px 0 0">${p[1]}</p><div class="more"><h4>About</h4><p>${p[2]}</p><h4>Project Goal</h4><p>${p[3]}</p><h4>Technologies Explored</h4><div class="tags">${p[4].map(t=>tag(t,/ESP|Arduino|sensor|Servo|OLED|Speaker|LM35|Accel/i.test(t)?"hw":"")).join("")}</div></div><div class="hint">Tap to open details</div></button>`).join("")}},
+{id:"experience",label:"Experience",sub:"Internship and workshop",html:()=>[["Embedded Systems Internship","IGTR, Aurangabad","15 days","Focus area: embedded systems and electronics."],["AI, Robotics & Electronics Workshop","Royal Oaks World High School","3 days","Participated in conducting a workshop covering AI, robotics and electronics for students."]].map((x,i)=>`<div class="card" style="--i:${i+1}"><div class="row"><h3>${x[0]}</h3><span class="badge">${x[2]}</span></div><p class="sub" style="margin:6px 0 8px;color:#8fb0ff">${x[1]}</p><p>${x[3]}</p></div>`).join("")},
+{id:"certs",label:"Certifications",sub:"Courses and certificates",html:()=>`<p class="grp" style="--i:1">Technical courses</p>`+[["MATLAB Onramp","MathWorks"],["Cisco Networking Basics","Cisco"],["Cisco Python Essentials","Cisco"]].map((x,i)=>`<div class="card" style="--i:${i+2}"><div class="row"><h3>${x[0]}</h3><span class="badge">${x[1]}</span></div></div>`).join("")+`<p class="grp" style="--i:5">Experience certificates</p>`+[["Embedded Systems Internship Certificate","IGTR, Aurangabad · 15 days"],["AI, Robotics & Electronics Workshop Certificate","Royal Oaks World High School · 3 days"]].map((x,i)=>`<div class="card" style="--i:${i+6}"><h3>${x[0]}</h3><p class="sub" style="margin:6px 0 0">${x[1]}</p></div>`).join("")},
+{id:"hobbies",label:"Hobbies",sub:"What keeps me curious",html:()=>{const h=[["🧠","Exploring Facts & General Knowledge","Diving deep into interesting facts, discovering new information, and understanding how the world works."],["🎧","Podcasts & Music","Listening to informative podcasts and music during my free time."],["🤖","Modern Technology","Keeping up with emerging technologies, AI innovations, and the latest developments in science and technology."],["🪐","Space & Astronomy","Exploring space, the universe, planets, and scientific discoveries."],["🧬","Science & Biology","Learning about biology, human life, nature, and scientific concepts."],["🌍","Social Sciences & Economics","Exploring political perspectives, economic systems, current affairs, and how societies function."],["✨","Curiosity-Driven Learning","Exploring diverse subjects and connecting ideas across technology, science, society, and economics.",1]];
+ return `<div class="grid">`+h.map((x,i)=>`<div class="card hob ${x[3]?"wide":""}" style="--i:${i+1}"><div class="ico">${x[0]}</div><h3>${x[1]}</h3><p style="margin-top:6px">${x[2]}</p></div>`).join("")+`</div>`}},
+{id:"contact",label:"Contact Me",sub:"Let’s connect",html:()=>`<p style="--i:1;font-size:19px;margin-bottom:22px"><b>Let’s Connect!</b> I am open to learning opportunities, technical collaborations, internships, and connecting with people in the technology field.</p>`+[["Email","kshitijsane3011@gmail.com","mailto:kshitijsane3011@gmail.com"],["GitHub","github.com/kshitijsane3011-ship-it","https://github.com/kshitijsane3011-ship-it"],["LinkedIn","linkedin.com/in/kshitij-sane","https://www.linkedin.com/in/kshitij-sane/"]].map((x,i)=>`<a class="card conn" style="--i:${i+2}" href="${x[2]}" target="_blank" rel="noopener"><small>${x[0]}</small><span>${x[1]}</span></a>`).join("")+`<div class="card" style="--i:5"><small class="sub">Location</small><br>Maharashtra, India</div>`}
+];
+const $=s=>document.querySelector(s),panel=$("#panel");
+$("#chips").innerHTML=S.map(s=>`<button class="chip" data-id="${s.id}">${s.label}<small>${s.sub}</small></button>`).join("");
+let ri=0,ci=0,del=false;const rEl=$("#role");
+(function ty(){const w=ROLES[ri];ci+=del?-1:1;rEl.textContent=w.slice(0,ci);let t=del?25:60;if(!del&&ci===w.length){del=true;t=1700}else if(del&&ci===0){del=false;ri=(ri+1)%ROLES.length;t=350}setTimeout(ty,t)})();
+function sizeF(){const w=innerWidth-20,h=innerHeight-20,r=$("#frame");r.setAttribute("width",w);r.setAttribute("height",h);panel.style.setProperty("--len",2*(w+h))}
+let last=null;
+function openP(b){last=b;const r=b.getBoundingClientRect();panel.style.setProperty("--x",r.left+r.width/2+"px");panel.style.setProperty("--y",r.top+r.height/2+"px");
+ const s=S.find(x=>x.id===b.dataset.id);$("#inner").innerHTML=`<h2 style="--i:0">${s.label}</h2>`+s.html();sizeF();panel.scrollTop=0;document.body.style.overflow="hidden";panel.classList.add("open");setTimeout(()=>$("#close").focus(),400)}
+function closeP(){panel.classList.remove("open");document.body.style.overflow="";last&&last.focus()}
+$("#chips").addEventListener("click",e=>{const b=e.target.closest(".chip");b&&openP(b)});
+$("#inner").addEventListener("click",e=>{const p=e.target.closest(".proj");if(p){const on=p.classList.toggle("on");p.setAttribute("aria-expanded",on);p.querySelector(".hint").textContent=on?"Tap to close":"Tap to open details"}});
+$("#close").onclick=closeP;addEventListener("keydown",e=>{if(e.key==="Escape"&&panel.classList.contains("open"))closeP()});addEventListener("resize",sizeF);
+/* starfield: parallax stars, constellation links, shooting stars, pointer pull */
+const cv=$("#sky"),cx=cv.getContext("2d"),dpr=Math.min(devicePixelRatio||1,2);let W,H,st=[],sh=[],mx=0,my=0,tx=0,ty=0;
+function lay(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);const n=Math.min(150,Math.floor(W*H/9500));st=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,z:.2+Math.random()*.8,p:Math.random()*6.3,c:Math.random()>.8?"255,120,190":Math.random()>.5?"140,170,255":"255,255,255"}))}
+let tr=[];
+function build(){tr=[];const g=48,n=Math.min(16,Math.floor(W*H/55000));
+ for(let k=0;k<n;k++){let x=Math.round(Math.random()*W/g)*g,y=Math.round(Math.random()*H/g)*g,h=Math.random()>.5;const p=[[x,y]];
+  for(let s=0;s<4;s++){const L=g*(2+Math.floor(Math.random()*4))*(Math.random()>.5?1:-1);if(h)x+=L;else y+=L;p.push([x,y]);
+   x+=(Math.random()>.5?1:-1)*g/2;y+=(Math.random()>.5?1:-1)*g/2;p.push([x,y]);h=!h}
+  const c=[0];for(let i=1;i<p.length;i++)c.push(c[i-1]+Math.hypot(p[i][0]-p[i-1][0],p[i][1]-p[i-1][1]));
+  tr.push({p,c,d:-Math.random()*400,v:1.4+Math.random()*2,col:Math.random()>.5?"255,79,163":"110,160,255"})}}
+function at(T,d){let i=1;while(i<T.c.length-1&&T.c[i]<d)i++;const a=T.p[i-1],b=T.p[i],u=(d-T.c[i-1])/(T.c[i]-T.c[i-1]||1);return[a[0]+(b[0]-a[0])*u,a[1]+(b[1]-a[1])*u]}
+function board(t){
+ cx.lineJoin="round";
+ tr.forEach(T=>{const e=T.p[T.p.length-1],tot=T.c[T.c.length-1];
+  cx.strokeStyle="rgba(79,124,255,.2)";cx.lineWidth=1.5;cx.beginPath();T.p.forEach((q,i)=>i?cx.lineTo(q[0],q[1]):cx.moveTo(q[0],q[1]));cx.stroke();
+  [T.p[0],e].forEach(q=>{cx.fillStyle="rgba(255,79,163,.45)";cx.beginPath();cx.arc(q[0],q[1],4.5,0,6.3);cx.fill();cx.fillStyle="#070419";cx.beginPath();cx.arc(q[0],q[1],1.8,0,6.3);cx.fill()});
+  T.d+=T.v;if(T.d>tot+80)T.d=-Math.random()*300;
+  cx.shadowBlur=12;cx.shadowColor=`rgb(${T.col})`;
+  for(let j=0;j<22;j++){const dd=T.d-j*3.2;if(dd<0||dd>tot)continue;const q=at(T,dd);cx.fillStyle=`rgba(${T.col},${(1-j/22)*.9})`;cx.beginPath();cx.arc(q[0],q[1],2.6*(1-j/30)+.4,0,6.3);cx.fill()}
+  cx.shadowBlur=0});
+ const base=H*.88;
+ [[.5,"110,160,255",0,1500],[.32,"255,79,163",2.2,1900]].forEach(l=>{cx.beginPath();
+  for(let x=0;x<=W;x+=4){const env=.5+.5*Math.sin(x/190-t/l[3]+l[2]),y=base+Math.sin(x/8-t/(110+l[2]*30))*24*env;x?cx.lineTo(x,y):cx.moveTo(x,y)}
+  cx.strokeStyle=`rgba(${l[1]},${l[0]})`;cx.lineWidth=2;cx.stroke()})}
+lay();build();addEventListener("resize",()=>{lay();build()});
+addEventListener("pointermove",e=>{tx=(e.clientX/W-.5);ty=(e.clientY/H-.5)},{passive:true});
+const still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function f(t){mx+=(tx-mx)*.05;my+=(ty-my)*.05;cx.clearRect(0,0,W,H);
+ st.forEach(s=>{s.y+=.08*s.z;if(s.y>H+5){s.y=-5;s.x=Math.random()*W}s.px=s.x+mx*40*s.z;s.py=s.y+my*40*s.z;
+  const a=.45+.55*Math.sin(t/700+s.p);cx.fillStyle=`rgba(${s.c},${a*s.z})`;cx.beginPath();cx.arc(s.px,s.py,s.z*1.6,0,6.3);cx.fill()});
+ cx.lineWidth=.7;for(let i=0;i<st.length;i++)for(let j=i+1;j<st.length;j++){const a=st[i],b=st[j];if(a.z<.6||b.z<.6)continue;const d=Math.hypot(a.px-b.px,a.py-b.py);if(d<95){cx.strokeStyle=`rgba(130,150,255,${(1-d/95)*.3})`;cx.beginPath();cx.moveTo(a.px,a.py);cx.lineTo(b.px,b.py);cx.stroke()}}
+ board(t);
+ if(!still)requestAnimationFrame(f)}
+requestAnimationFrame(f);
+</script>
+</body>
+</html>
